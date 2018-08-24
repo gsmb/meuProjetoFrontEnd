@@ -1,4 +1,6 @@
+import { Pessoa } from './../model/pessoa';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-pessoal-controller',
@@ -8,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 
 export class PessoalControllerComponent implements OnInit {
 
-  constructor() { }
+  pessoa = new Pessoa("Gabriel", 15, "M","asdas","20/20/20", "14755976731");
+
+  constructor() {
+   }
 
   ngOnInit() {
   }
 
+  obterPessoa() {
+
+  }
+
+  listarPessoas() {
+
+  }
+
+  editarPessoa(){
+
+  }
+
+  deletarPessoa() {
+
+  }
+
+  msgAlerta() {
+    console.log("Hello estou aparecendo");
+  }
+  
 }
+

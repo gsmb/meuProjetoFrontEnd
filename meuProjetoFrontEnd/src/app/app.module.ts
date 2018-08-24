@@ -6,8 +6,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
 const modules = [
   BrowserModule,
@@ -16,7 +19,10 @@ const modules = [
   MatFormFieldModule,
   MatButtonModule,
   MatCheckboxModule,
-  MatInputModule
+  MatInputModule,
+  MatDatepickerModule,
+  MatIconModule,
+  FormsModule
 ];
 
 

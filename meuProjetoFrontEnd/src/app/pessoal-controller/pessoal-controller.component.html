@@ -1,25 +1,31 @@
-<form class="example-form">
-  <mat-form-field class="full-width">
-    <input matInput placeholder="Seu nome Completo">
-  </mat-form-field>
-  <br>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Sua idade">
-  </mat-form-field>
-<br>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Seu sexo">
-  </mat-form-field>
-  <br>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Seu Endereço">
-  </mat-form-field>
-  <br>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Sua data de nasciemtno">
-  </mat-form-field>
-  <br>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Seu CPF">
-  </mat-form-field>
-</form>
+<div class="container">
+  <h1>Cadastro de Pessoas</h1>
+  <form #cadastroPessoa="ngForm">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control" id="nome" required [(ngModel)]="pessoa.nome" name="nome" #name="ngForm">
+        </div>
+           <br>
+        <div class="form-group">
+          <label for="name">Idade</label>
+          <input type="text" class="form-control" id="idade" required>
+        </div>
+          <br>
+        <div class="form-group">
+          <label for="name">Sexo</label>
+          <input type="text" class="form-control" id="sexo" required>
+        </div>
+          <br>
+        <div class="form-group">
+          <label for="name">Data Nascimento</label>
+          <input type="text" class="form-control" id="datanascimento" required>
+        </div>
+          <br>
+        <div class="form-group">
+          <label for="name">CPF</label>
+          <input type="text" class="form-control" id="cpf" required>
+        </div>
+          <br>
+        <button (click)="msgAlerta()" type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
