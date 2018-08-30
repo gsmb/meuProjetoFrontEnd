@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Cadastro de Pessoas</h1>
+  
+  <form #cadastroPessoa="ngForm">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control" id="nome" [(ngModel)]="pessoa.nome" name="nome">
+        </div>
+           <br>
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="pessoa.email" name="email">
+        </div>
+          <br>
+        <div class="form-group">
+          <label for="name">Sexo</label>
+          <input type="text" class="form-control" id="sexo" [(ngModel)]="pessoa.sexo" name="sexo">
+        </div>
+          <br>
+        <div class="form-group">
+          <label for="name">Data Nascimento</label>
+          <input type="date" class="form-control" id="data_nascimento" [(ngModel)]="pessoa.data_nascimento" name="data_nascimento">
+        </div>
+          <br>
+        <div class="form-group">
+          <label for="name">CPF</label>
+          <input type="text" class="form-control" id="cpf" [(ngModel)]="pessoa.cpf" name="cpf">
+        </div>
+          <br>
+        <button (click)="enviarDados()" type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

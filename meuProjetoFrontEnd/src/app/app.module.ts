@@ -1,4 +1,4 @@
-import { PessoalControllerComponent } from './pessoal-controller/pessoal-controller.component';
+import { PessoaComponent } from './pessoa-componentes/pessoa.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -28,7 +28,7 @@ const modules = [
 
 @NgModule({
   declarations: [
-    AppComponent, PessoalControllerComponent
+    AppComponent, PessoaComponent
   ],
   imports: [...modules],
   exports: [...modules],
