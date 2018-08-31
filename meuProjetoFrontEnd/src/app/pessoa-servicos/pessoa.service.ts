@@ -1,26 +1,36 @@
-import { PessoaModel } from '../model/PessoaModel';
 import { Injectable } from '@angular/core';
-import { EventEmitter } from 'protractor';
+import 'rxjs/add/operator/map'
+import { HttpClient } from '@angular/common/http';
+import { PessoaModel } from '../pessoa-model/PessoaModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PessoaService {
 
-  pessoas: PessoaModel [] = [];
-  enviarPessoa = new EventEmitter();
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  baseUrl: string = 'http://localhost:8080/user-portal/users';
 
-  setPessoa(novaPessoa: PessoaModel): void {
-      this.pessoas.push(novaPessoa);
-      this.enviarPessoa.emit(this.pessoas);
+  getUsers() {
+    return this.http.get<PessoaModel[]>(this.baseUrl);
   }
 
-  getContato(id: number): PessoaModel {
-    let pessoa: PessoaModel;
-
-    pessoa = this.pessoas[id];
-    return pessoa;
+  getUserById(id: number) {
+    return this.http.get<PessoaModel>(this.baseUrl + '/' + id);
   }
+
+  createUser(pessoa: PessoaModel) {
+    return this.http.post(this.baseUrl, pessoa);
+  }
+
+  updateUser(pessoa: PessoaModel) {
+    return this.http.put(this.baseUrl + '/' + pessoa.id, pessoa);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(this.baseUrl + '/' + id);
+  }
+
+
 }

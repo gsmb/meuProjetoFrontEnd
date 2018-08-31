@@ -1,3 +1,4 @@
+import { ConfigService } from './servicos/config-service';
 import { PessoaComponent } from './pessoa-componentes/pessoa.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,12 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PessoaService } from './pessoa-servicos/pessoa.service';
+import { HttpModule } from '@angular/http';
+import { AddPessoaComponent } from './pessoa-crud/add-pessoa/add-pessoa.component';
+import { EditPessoaComponent } from './pessoa-crud/edit-pessoa/edit-pessoa.component';
+import { ListPessoaComponent } from './pessoa-crud/list-pessoa/list-pessoa.component';
 
 const modules = [
   BrowserModule,
@@ -22,17 +29,19 @@ const modules = [
   MatInputModule,
   MatDatepickerModule,
   MatIconModule,
-  FormsModule
+  FormsModule,
+  HttpClientModule,
+  HttpModule
 ];
 
 
 @NgModule({
   declarations: [
-    AppComponent, PessoaComponent
+    AppComponent, PessoaComponent, AddPessoaComponent, EditPessoaComponent, ListPessoaComponent
   ],
   imports: [...modules],
   exports: [...modules],
-  providers: [],
+  providers: [PessoaService, ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
