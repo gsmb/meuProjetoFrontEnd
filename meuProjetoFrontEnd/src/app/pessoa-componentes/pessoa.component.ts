@@ -1,5 +1,7 @@
+import { PessoaModel } from './../pessoa-model/PessoaModel';
+import { PessoaService } from './../pessoa-servicos/pessoa.service';
 import { Component, OnInit } from '@angular/core';
-import { PessoaService } from '../pessoa-servicos/pessoa.service';
+
 
 @Component({
   selector: 'app-pessoa',
@@ -9,8 +11,18 @@ import { PessoaService } from '../pessoa-servicos/pessoa.service';
 
 export class PessoaComponent implements OnInit {
 
+  pessoas: PessoaModel[];
+
   constructor(private pessoaServico: PessoaService) {   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+    this.pessoaServico.getPessoas().subscribe((
+        pessoas: any[]) => {
+        this.pessoas = pessoas['content'];
+      },
+      (error) => console.log(error)
+    );
+  }
 }
 

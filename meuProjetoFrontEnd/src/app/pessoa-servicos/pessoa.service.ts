@@ -10,9 +10,9 @@ export class PessoaService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = 'http://localhost:8080/user-portal/users';
+  baseUrl: string = 'http://localhost:8080/api/pessoas';
 
-  getUsers() {
+  getPessoas() {
     return this.http.get<PessoaModel[]>(this.baseUrl);
   }
 

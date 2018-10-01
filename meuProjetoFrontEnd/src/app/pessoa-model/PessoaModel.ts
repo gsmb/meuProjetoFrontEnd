@@ -7,5 +7,4 @@ export class PessoaModel {
         public endereco: string;
         public data_nascimento: string;
         public cpf: string;
-    constructor( ) { }
 }
