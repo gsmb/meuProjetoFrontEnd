@@ -1,32 +1,39 @@
 <div class="container">
   <h1>Cadastro de Pessoas</h1>
   
-  <form method="POST" #cadastroPessoa="ngForm" (ngSubmit)="criar(cadastroPessoa)">
+  <form method="POST" (ngSubmit)="enviarDados()" #cadastro="ngForm" novalidate>
+
         <div class="form-group">
-          <label for="name">Nome</label>
-          <input type="text" class="form-control" id="nome" [(ngModel)]="pessoa.nome" name="nome" required>
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" #nome="ngModel" [(ngModel)]="pessoa.nome" name="nome" required>
         </div>
            <br>
         <div class="form-group">
-          <label for="name">Email</label>
+          <label for="email">Email</label>
           <input type="email" class="form-control" id="email" [(ngModel)]="pessoa.email" name="email" required email>
         </div>
           <br>
         <div class="form-group">
-          <label for="name">Sexo</label>
+          <label for="sexo">Sexo</label>
           <input type="text" class="form-control" id="sexo" [(ngModel)]="pessoa.sexo" name="sexo" required>
         </div>
           <br>
         <div class="form-group">
-          <label for="name">Data Nascimento</label>
+          <label for="data_nascimento">Data Nascimento</label>
           <input type="date" class="form-control" id="data_nascimento" [(ngModel)]="pessoa.data_nascimento" name="data_nascimento" required>
         </div>
           <br>
         <div class="form-group">
-          <label for="name">CPF</label>
+          <label for="endereco">Endereço</label>
+          <input type="text" class="form-control" id="endereco" [(ngModel)]="pessoa.endereco" name="endereco" required>
+        </div>
+          <br>
+        <div class="form-group">
+          <label for="cpf">CPF</label>
           <input type="text" class="form-control" id="cpf" [(ngModel)]="pessoa.cpf" name="cpf" required>
         </div>
           <br>
-        <button type="submit" class="btn btn-success" [disabled]="cadastroPessoa.invalid" (click)="enviarDados()">Salvar</button>
+        <button type="submit" class="btn btn-success" [disabled]="cadastro.form.invalid">Salvar</button>
+
   </form>
 </div>

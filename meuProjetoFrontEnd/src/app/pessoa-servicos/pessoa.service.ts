@@ -20,7 +20,7 @@ export class PessoaService {
     return this.http.get<PessoaModel>(this.baseUrl + '/' + id);
   }
 
-  createUser(pessoa: PessoaModel) {
+  criarPessoa(pessoa: PessoaModel) {
     return this.http.post(this.baseUrl, pessoa);
   }
 

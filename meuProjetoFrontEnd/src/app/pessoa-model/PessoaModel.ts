@@ -1,5 +1,4 @@
 export class PessoaModel {
-    
         public id: number;
         public nome: string;
         public email: string;

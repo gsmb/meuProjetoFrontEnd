@@ -1,6 +1,7 @@
 import { PessoaModel } from './../pessoa-model/PessoaModel';
 import { PessoaService } from './../pessoa-servicos/pessoa.service';
 import { Component, OnInit } from '@angular/core';
+import {any} from 'codelyzer/util/function';
 
 
 @Component({
@@ -11,18 +12,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class PessoaComponent implements OnInit {
 
-  pessoas: PessoaModel[];
+  pessoa = new PessoaModel();
 
   constructor(private pessoaServico: PessoaService) {   }
 
-  ngOnInit() { 
+  ngOnInit() { }
 
-    this.pessoaServico.getPessoas().subscribe((
-        pessoas: any[]) => {
-        this.pessoas = pessoas['content'];
-      },
-      (error) => console.log(error)
-    );
+  enviarDados() {
+    this.pessoaServico.criarPessoa(this.pessoa);
   }
 }
 
