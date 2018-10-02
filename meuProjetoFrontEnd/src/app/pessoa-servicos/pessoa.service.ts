@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
 import { PessoaModel } from '../pessoa-model/PessoaModel';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,12 @@ export class PessoaService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = 'http://localhost:8080/api/pessoas';
+  baseUrl = 'http://localhost:8080/api/pessoas';
 
-  getPessoas() {
-    return this.http.get<PessoaModel[]>(this.baseUrl);
+  getPessoas(){
+    return this.http.get(this.baseUrl)
+      .map(resp => resp);
+
   }
 
   getUserById(id: number) {

@@ -1,3 +1,9 @@
 <p>
-  list-pessoa works!
+  Pessoas Cadastradas!
 </p>
+
+<ul class="PessoaModel">
+  <li *ngFor="let pessoa of listarPessoas()">>
+    <span class="badge">{{pessoa.id}}</span> {{pessoa.nome}}
+  </li>
+</ul>

@@ -4,6 +4,6 @@ export class PessoaModel {
         public email: string;
         public sexo: string;
         public endereco: string;
-        public data_nascimento: string;
+        public dataNascimento: string;
         public cpf: string;
 }

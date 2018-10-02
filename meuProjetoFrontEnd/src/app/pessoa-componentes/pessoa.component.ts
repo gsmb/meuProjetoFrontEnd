@@ -1,7 +1,6 @@
 import { PessoaModel } from './../pessoa-model/PessoaModel';
 import { PessoaService } from './../pessoa-servicos/pessoa.service';
 import { Component, OnInit } from '@angular/core';
-import {any} from 'codelyzer/util/function';
 
 
 @Component({
@@ -19,7 +18,10 @@ export class PessoaComponent implements OnInit {
   ngOnInit() { }
 
   enviarDados() {
-    this.pessoaServico.criarPessoa(this.pessoa);
+    this.pessoaServico.criarPessoa(this.pessoa)
+      .subscribe(
+      resp => console.log('massa deu certo'),
+      error => console.log('deu ruim'));
   }
 }
 
