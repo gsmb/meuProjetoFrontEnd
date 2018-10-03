@@ -14,9 +14,7 @@ export class PessoaService {
   baseUrl = 'http://localhost:8080/api/pessoas';
 
   getPessoas(){
-    return this.http.get(this.baseUrl)
-      .map(resp => resp);
-
+    return this.http.get(this.baseUrl);
   }
 
   getUserById(id: number) {

@@ -2,8 +2,28 @@
   Pessoas Cadastradas!
 </p>
 
-<ul class="PessoaModel">
-  <li *ngFor="let pessoa of listarPessoas()">>
-    <span class="badge">{{pessoa.id}}</span> {{pessoa.nome}}
-  </li>
-</ul>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Sexo</th>
+    <th>Data Nascimento</th>
+    <th>CPF</th>
+    <th>Endereço</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pessoa of pessoas">
+    <td>{{ pessoa.id }}</td>
+    <td>{{ pessoa.nome }}</td>
+    <td>{{ pessoa.email}}</td>
+    <td>{{ pessoa.sexo }}</td>
+    <td>{{ pessoa.dataNascimento }}</td>
+    <td>{{ pessoa.cpf }}</td>
+    <td>{{ pessoa.endereco }}</td>
+  </tr>
+  </tbody>
+</table>

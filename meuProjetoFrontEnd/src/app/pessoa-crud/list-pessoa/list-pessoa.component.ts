@@ -9,15 +9,15 @@ import {PessoaModel} from '../../pessoa-model/PessoaModel';
 })
 export class ListPessoaComponent implements OnInit {
 
-  pessoa: PessoaModel;
+  pessoas: PessoaModel[];
 
   constructor(private pessoaServico: PessoaService) { }
 
   ngOnInit() {
+    this.pessoaServico.getPessoas()
+      .subscribe(
+        (data: PessoaModel[]) => {
+          this.pessoas = data;
+        });
   }
-
-  listarPessoas () {
-    this.pessoaServico.getPessoas();
-  }
-
 }
